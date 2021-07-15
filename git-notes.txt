@@ -1,0 +1,125 @@
+GIT-Branching
+-------------------
+1.when ever you intialize the repository by default it creates master/main brach.
+Master brach is also called as production code.
+
+2.when ever you tried to develop new feature in APPlication.
+ we should create new brach(Development branch)
+
+3.when ever you create new brach ,all code carried forward from master brach to new branch
+
+4.brances are independent.
+
+5.on the development branch we can create feature branches.Feature braches are called as short leave branches.
+
+6.After competion of development feature brach ,they will send for testing if the cheanges are accepted
+  then it will merge with "develpoment" brach.
+
+7.After merging feature brach will be deleted.
+
+8.finally development brach is merge with master branch after testing,approval.
+
+
+
+public repo examples:
+---------------------
+1.game of life git hub
+2.spring pet clinic git hub 
+
+How to add alias name to repository url:
+#git remote add prl https://github.com/prlmbax/repo1.git
+
+How to Download/pull data from remote repository:
+#git pull (or) git pull sagar master
+
+How to UPload/push the data from local Repo to remote GITHub:
+#git push (or) git push origin/sagar master
+
+tTo see the url of remote repos:
+#git remote -v
+
+
+GIT BRANCHING MODEL---->https://nvie.com/posts/a-successful-git-branching-model/------>GIT branching model
+
+Git Merge:
+------------
+Merging the commits from dbranch branch to another branch.
+eg:like development--->master,featured branch-->development
+
+Merging always happends on time stamp of commits
+
+#merging development branch to master branch:
+  1.swith to master branch 
+   #git checkout master
+  2.merge develpoment to master
+   #git merge development
+===============================================================
+how to check Branch list:
+ #git branch
+how to create branch:
+ #git branch <branch-name>
+how to create branch and switch to branch:
+ #git checkout -b <branch-name>
+how to switch to branch name:
+ #git checkout <branch-name>
+================================================================
+REBASE:
+-------
+it is like merging but it moves the branch on top commit of master
+after rebase you should merge.
+
+Which brach you want to rebase go to that branch and form that you rebase to master
+ #git rebase master 
+go to master,merge the development branch to master
+ #git merge development
+
+===========================================================================
+cherry-pick
+---------------------------------
+whenever you lots of commits happend in development branch ,
+but you want merge one perticular with master branch we use cherry-pick
+
+1.Take commit-id which you want to merge with master
+2.go to master branch
+  #git checkout master
+3.git cherry-pick <commit-id1> <commit-id2>
+
+===========================================================================
+.gitignore:
+-------------------
+when your files kept in this file,this file is never touched by git.
+if you want hide the files from others you also kept those file into it
+===========================================================================
+git stash:
+---------- 
+Stashing takes the dirty state of your working directory — that is, 
+your modified tracked files and staged changes — and saves it on a stack of unfinished changes ...
+
+wip------>work in progress
+
+1. For Stashing the files:
+   #git stash -a/git stash -u
+
+2. For see Stash list:
+   #git stash list
+
+3. For unstashing files:
+   #git stash apply <stash-id:0>---->Stashed files are send to untracked files.
+   #git stash pop <stash-id:1>------>Stashed files are send to stagging Area.
+
+=======================================================================================
+
+Tags:
+--------
+tags are used for identify the immportant commits easily
+
+1. How to crate a tag:
+    #git tag -a <tag-name> -m "write-message" <commit-id>
+
+2. How to push tags to github
+    #git push --tags
+
+3. To delete Tag:
+    #git tag -d <Tag-Name> 
+======================================================================
+git Squash:many commits are grouped as single commit 
